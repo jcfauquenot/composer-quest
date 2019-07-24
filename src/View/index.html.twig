@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+<h1>the best JC</h1>
+{% endblock %}
+
+{% block content %}
+    {% for product in products %}
+        <div class="col-sm-4">
+            <div class="card">
+                <img alt="" class="card-img-top" src="https://picsum.photos/id/10/10?grayscale">
+                <div class="card-body">
+                    <h4 class="card-title">{{ product }}</h4>
+                    <p class="card-text">{{ product }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endblock %}

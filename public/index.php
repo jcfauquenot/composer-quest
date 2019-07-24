@@ -1,13 +1,6 @@
-<?php 
-
-require __DIR__ . '/../vendor/autoload.php';
-
-use App\wcs\Hello;
-use HelloWorld\SayHello;
-
-
-$test = new Hello();
-echo $test->talk("Bonjour-premier_objet_class_Hello")."<br \>";
-
-$test2 = new SayHello();
-echo $test2->world();
+<?php
+    require __DIR__ . '/../vendor/autoload.php';
+    $loader = new Twig_Loader_Filesystem(__DIR__ . '/../src/View');
+    $twig = new Twig_Environment($loader);
+    $products = ['product1', 'product2', 'product3', 'product4', 'product5'];
+    echo $twig->render('index.html.twig',['products'=> $products]);
